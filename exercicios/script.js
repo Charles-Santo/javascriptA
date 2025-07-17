@@ -50,7 +50,7 @@ function converterMaiusculo(){
 
     let texto1 = (document.getElementById("textoMaius").value);
 
-    document.getElementById("resultado5").innerText = "Seu texto em maiusculo: " + texto1.toUpperCase();
+    document.getElementById("resultado5").innerText = "Seu nome em maiusculo: " + texto1.toUpperCase();
 
 }
 
@@ -130,7 +130,7 @@ function realizarMediaNotas(){
 
     if (media >= 6) {
 
-        document.getElementById("resultado9").innerText = "APROVADO Nota : " + media;
+        document.getElementById("resultado9").innerText = "APROVADO Nota : " + media.toFixed(2);
 
     }else{
 
@@ -154,7 +154,59 @@ function converterTemperatura(){
 
 function verificarDiaSemana(){
 
-    let diaSemana = Number(document.getElementById("numeroDia").value);
+    let numeroDiaSemana = Number(document.getElementById("numeroDia").value);
 
+    if (0 < numeroDiaSemana && numeroDiaSemana <= 7 ) {
+        
+    
+        const diasSemana = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sabado"];
+
+        document.getElementById("resultado11").innerText = diasSemana[numeroDiaSemana - 1];
+
+    } else{
+
+        document.getElementById("resultado11").innerText = "Digite um número VÁLIDO 1 A 7";
+
+    }
+
+}
+
+function verificarSenha(){
+
+    let senhaPasse = (document.getElementById("senha").value);
+
+    if (senhaPasse === "1234"){
+
+        document.getElementById("resultado12").innerText = "ACESSO PERMITIDO";
+
+    } else{
+
+        document.getElementById("resultado12").innerText = "ACESSO NEGADO";
+
+    }
+
+
+}
+
+function realizarContagemRegressiva(){
+
+    var contagem;
+
+    for (let indice = 10; indice > 0; indice--) {
+      
+
+        if (indice === 10) {
+
+            contagem = indice + "\n";
+
+        }else{
+
+            contagem += indice + "\n";
+
+    }
+        
+    }
+
+    document.getElementById("resultado13").innerText = contagem;
 
 }
